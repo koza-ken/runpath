@@ -1,3 +1,7 @@
-<%= turbo_stream.update "click_count"  do %>
+<%= turbo_stream.update "all_click_count"  do %>
+  <%= render @count %>
+<% end %>
+
+<%= turbo_stream.update "session_click_count"  do %>
   <%= render @count %>
 <% end %>

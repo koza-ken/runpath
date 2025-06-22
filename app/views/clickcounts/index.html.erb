@@ -3,7 +3,7 @@
 
 <main class="max-w-2xs mx-auto text-center my-32">
   <div class="text-center">
-      <p class="text-4xl", id="click_count"><%= @count.count %></p>
+      <p class="text-4xl", id="all_click_count"><%= @count.count %></p>
   </div>
 
   <%= form_with url: clickcounts_path, method: :post, local: false, data: { turbo_method: :post } do |f| %>
@@ -17,7 +17,7 @@
 
   <div class="mt-40">
     <div class="text-center">
-      <p class="text-4xl"><%= @count.count %></p>
+      <p class="text-4xl", id="session_click_count"><%= @count.count %></p>
     </div>
 
     <div class="my-12">
