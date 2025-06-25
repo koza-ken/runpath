@@ -9,3 +9,16 @@ audioButton.addEventListener('click', () => {
   audioPlaying.load()
   audioPlaying.play()
 })
+
+const volumeLoud = document.getElementById("volume-loud")
+const volumeMute = document.getElementById("volume-mute")
+volumeLoud.addEventListener('click', ()=>{
+  volumeLoud.classList.add('hidden')
+  volumeMute.classList.remove('hidden')
+  audioPlaying.muted = true
+})
+volumeMute.addEventListener('click', ()=>{
+  volumeLoud.classList.remove('hidden')
+  volumeMute.classList.add('hidden')
+  audioPlaying.muted = false
+})

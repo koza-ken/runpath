@@ -12,7 +12,14 @@
     <%= f.submit :clickcount, id: "audio-btn", class: "my-12 group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-neutral-200 bg-orange-300 px-10 font-medium text-white transition-all [box-shadow:0px_4px_1px_#ffa500] active:translate-y-[2px] active:shadow-none" %>
   <% end %>
   <div>
-    <p>ボタンを押すと音が鳴るので気をつけてください</p>
+    <p>ボタンを押すと音が出ます</p>
+  </div>
+  
+  <div id="volume-loud" >
+    <%= image_tag 'volume-loud.svg', class: 'mx-auto' %>
+  </div>
+  <div id="volume-mute", class="hidden">
+    <%= image_tag 'volume-mute.svg', class: 'mx-auto'  %>
   </div>
 
   <%= form_with url: clickcount_path(id: 1), method: :delete do |f| %>
