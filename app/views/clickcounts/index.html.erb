@@ -3,22 +3,20 @@
 
 <main class="max-w-2xs mx-auto text-center my-32">
   <div class="text-center">
-      <p class="text-4xl", id="all_click_count"><%= @count.count %></p>
+      <p>みんなの&nbsp;らんぱすー</p>
+      <p class="text-6xl mt-6", id="all_click_count"><%= @count.count %></p>
   </div>
 
   <%= audio_tag "/ranpath.wav", id: "audio-play" %>
 
   <%= form_with url: clickcounts_path, method: :post, local: false, data: { turbo_method: :post } do |f| %>
-    <%= f.submit :clickcount, id: "audio-btn", class: "my-12 group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-neutral-200 bg-orange-300 px-10 font-medium text-white transition-all [box-shadow:0px_4px_1px_#ffa500] active:translate-y-[2px] active:shadow-none" %>
+    <%= f.submit 'らんぱすー', id: "audio-btn", class: "my-12 group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-neutral-200 bg-orange-300 px-10 font-medium text-white transition-all [box-shadow:0px_4px_1px_#ffa500] active:translate-y-[2px] active:shadow-none" %>
   <% end %>
-  <div>
-    <p>ボタンを押すと音が出ます</p>
-  </div>
   
-  <div id="volume-loud" >
+  <div id="volume-loud" class="mt-10" >
     <%= image_tag 'volume-loud.svg', class: 'mx-auto' %>
   </div>
-  <div id="volume-mute", class="hidden">
+  <div id="volume-mute", class="hidden mt-10">
     <%= image_tag 'volume-mute.svg', class: 'mx-auto'  %>
   </div>
 
@@ -27,15 +25,21 @@
   <% end %>
   
 
-  <div class="mt-40">
+  <div class="mt-20">
     <div class="text-center">
-      <p class="text-4xl", id="session_click_count"><%= @count.count %></p>
+      <P>あなたの&nbsp;らんぱすー</p>
+      <button type='button' id='session-update-button' class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-4'>
+        りろーど
+      </button>
+      <p class="text-3xl mt-6", id="session_click_count"><%= @session_count %></p>
     </div>
 
     <div class="my-12">
-      <button class="text-white bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55">
-        ああああ
-      </button>
+      <%= link_to "https://twitter.com/share?url=https://www.yahoo.co.jp&text=#{@session_count}らんぱすー&hashtags=らんぱすー", target: '_blank', data: { toggle: "tooltip", placement: "bottom" }, title: "Xでシェア",
+          class: "text-black bg-[#f5f5f5] hover:bg-[#f5f5f5]/80 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55" do %>
+        <%= image_tag 'square-x-twitter-brands.svg',width: '20px' %>
+        <p>&emsp;しぇあ</p>
+      <% end %>
     </div>
   </div>
 </main>
