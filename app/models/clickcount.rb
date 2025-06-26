@@ -1,0 +1,2 @@
+class Clickcount < ApplicationRecord
+end
