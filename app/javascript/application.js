@@ -38,13 +38,12 @@ const incrementSessionCount = () => {
   let count = parseInt(sessionStorage.getItem("session_count"), 10)
   count += 1
   sessionStorage.setItem("session_count", count)
- 
 }
 
-const count = sessionStorage.getItem("session_count")
+
 const updateSessionCountView =  () => {
   initSessionCount()
-
+  let count = sessionStorage.getItem("session_count")
   const element = document.getElementById("session_click_count")
   if (element) {
     element.textContent = `${count}`
@@ -57,6 +56,7 @@ sessionUpdateCountButton.addEventListener('click', updateSessionCountView)
 // Xへの投稿ボタン
 const tweetButton = document.getElementById("x-post-button");
 tweetButton.addEventListener("click", () => {
+  let count = sessionStorage.getItem("session_count")
   const tweetURL = `https://twitter.com/intent/tweet?text=${count}らんぱすー&hashtags=らんぱすー&url=https://www.yahoo.co.jp/`;  
   window.open(tweetURL, "_blank");
 });
