@@ -4,7 +4,7 @@
 <main class="max-w-2xs mx-auto text-center my-32">
   <div class="text-center">
     <p>みんなの&nbsp;らんぱすー</p>
-    <p class="text-6xl mt-6", id="all_click_count"><%= @count&.count %></p>
+    <p class="text-6xl mt-6 font-normal", id="all_click_count"><%= @count&.count %></p>
   </div>
 
   <%= audio_tag "/ranpath.wav", id: "audio-play" %>
@@ -31,7 +31,7 @@
       <button type='button' id='session-update-button' class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-4'>
         りろーど
       </button>
-      <p class="text-3xl mt-6", id="session_click_count">0</p>
+      <p class="text-3xl mt-6 font-normal", id="session_click_count">0</p>
     </div>
 
     <div class="my-12">
