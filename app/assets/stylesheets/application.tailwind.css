@@ -1,1 +1,13 @@
+/* URLのインポートはtailwindより上 */
+@import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap");
 @import "tailwindcss";
+
+/* @theme {
+  --font-main: "Zen Maru Gothic";
+  --font-weight-bold: 500;
+} */
+
+body {
+  font-family: "Zen Maru Gothic";
+  font-weight: bold;
+}
