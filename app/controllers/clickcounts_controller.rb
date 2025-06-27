@@ -1,7 +1,6 @@
 class ClickcountsController < ApplicationController
   def index
     @count = Clickcount.find_by(id: 1)
-    @session_count = 0
   end
 
   def create
