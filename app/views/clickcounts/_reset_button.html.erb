@@ -1,0 +1,8 @@
+
+<%= form_with url: clickcount_path(id: 1), method: :delete do |f| %>
+  <%= f.submit "リセット", 
+      class: "my-12 group relative inline-flex h-12 items-center justify-center overflow-hidden
+              rounded-md  bg-[#A8D5BA] hover:bg-[#95CBAF] hover:[box-shadow:0px_4px_1px_#69B37B] 
+              px-10 font-medium text-white  transition-all [box-shadow:0px_4px_1px_#81C784] 
+              active:translate-y-[2px] active:shadow-none" %>
+<% end %>
