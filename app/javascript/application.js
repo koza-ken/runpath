@@ -26,24 +26,24 @@ volumeMute.addEventListener('click', ()=>{
   audioPlaying.muted = false
 })
 
-// セッションストレージのsession_countというキーがなければ0にする
+// セッションストレージのsession_countというキーがなければ0にする（sessionStorrageは文字列で保存）
 const initSessionCount = () => {
   if (!sessionStorage.getItem("session_count")) {
-   sessionStorage.setItem("session_count", 0)
+   sessionStorage.setItem("session_count", "0")
   }
 }
 
 // セッションのカウントを1増やしてその数字で上書きする
 const incrementSessionCount = () => {
+  // 文字列を数字に変換する必要あり
   let count = parseInt(sessionStorage.getItem("session_count"), 10)
   count += 1
-  sessionStorage.setItem("session_count", count)
+  sessionStorage.setItem("session_count", count.toString())
 }
-
 
 const updateSessionCountView =  () => {
   initSessionCount()
-  let count = sessionStorage.getItem("session_count")
+  let count = parseInt(sessionStorage.getItem("session_count"), 10)
   const element = document.getElementById("session_click_count")
   if (element) {
     element.textContent = `${count}`
