@@ -1,9 +1,9 @@
 <header>
 </header>
 
-<main class="max-w-2xs mx-auto text-center my-40">
+<main class="max-w-2xs mx-auto text-center my-40 max-sm:mt-16 max-sm:mb-20">
   <div class="text-center">
-    <p class="text-3xl">みんなの&nbsp;らんぱすー</p>
+    <p class="text-3xl max-sm:text-2xl">みんなの&nbsp;らんぱすー</p>
     <p class="text-6xl mt-6 font-normal", id="all_click_count"><%= @count&.count %></p>
   </div>
 
@@ -13,7 +13,7 @@
     <%= f.submit 'らんぱすー', id: "audio-btn", 
         class: "mt-12 mb-6 group relative inline-flex h-12 items-center justify-center overflow-hidden 
                 rounded-md bg-[#f09134] hover:bg-[#F4A261] hover:[box-shadow:0px_4px_1px_#E76F51] 
-                p-10 font-medium text-white text-3xl leading-0 transition-all [box-shadow:0px_4px_1px_#E76F51] 
+                p-10 max-sm:p-8 font-medium text-white text-3xl max-sm:text-2xl leading-0 transition-all [box-shadow:0px_4px_1px_#E76F51] 
                 active:translate-y-[2px] active:shadow-none" %>
   <% end %>
   
@@ -30,7 +30,7 @@
     <div class="text-center">
       <P>あなたの&nbsp;らんぱすー</p>
       <p class="text-3xl mt-2 font-normal", id="session_click_count">0</p>
-      <button type='button' id='session-update-button' class='bg-[#8abea3] hover:bg-[#a3cca9] hover:[box-shadow:0px_4px_1px_#81C784] text-white font-medium py-2 px-4 overflow-hidden rounded-md mt-4 transition-all [box-shadow:0px_4px_1px_#81C784] active:translate-y-[2px] active:shadow-none'>
+      <button type='button' id='session-update-button' class='bg-[#8abea3] hover:bg-[#a3cca9] hover:[box-shadow:0px_4px_1px_#81C784] text-white font-medium py-2 px-4 overflow-hidden rounded-md mt-4 transition-all [box-shadow:0px_4px_1px_#6DA98A] active:translate-y-[2px] active:shadow-none'>
         りろーど
       </button>
     </div>
