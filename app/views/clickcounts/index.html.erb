@@ -12,31 +12,31 @@
   <%= form_with url: clickcounts_path, method: :post, local: false, data: { turbo_method: :post } do |f| %>
     <%= f.submit 'らんぱすー', id: "audio-btn", 
         class: "mt-12 mb-6 group relative inline-flex h-12 items-center justify-center overflow-hidden 
-                rounded-md bg-[#F4A261] hover:bg-[#f09134] hover:[box-shadow:0px_4px_1px_#C65D3D] 
+                rounded-md bg-[#f09134] hover:bg-[#F4A261] hover:[box-shadow:0px_4px_1px_#E76F51] 
                 p-10 font-medium text-white text-3xl leading-0 transition-all [box-shadow:0px_4px_1px_#E76F51] 
                 active:translate-y-[2px] active:shadow-none" %>
   <% end %>
   
-  <div id="volume-loud" class="mt-4" >
+  <div id="volume-loud" class="mt-2" >
     <%= image_tag 'volume-loud.svg', class: 'mx-auto' %>
   </div>
-  <div id="volume-mute", class="hidden mt-4">
+  <div id="volume-mute", class="hidden mt-2">
     <%= image_tag 'volume-mute.svg', class: 'mx-auto'  %>
   </div>
 
   <%# <%= render 'reset_button' %> 
 
-  <div class="mt-14">
+  <div class="mt-10">
     <div class="text-center">
       <P>あなたの&nbsp;らんぱすー</p>
-      <p class="text-3xl mt-4 font-normal", id="session_click_count">0</p>
-      <button type='button' id='session-update-button' class='bg-[#A8D5BA] hover:bg-[#95CBAF] hover:[box-shadow:0px_4px_1px_#69B37B] text-white font-medium py-2 px-4 overflow-hidden rounded-md mt-4 transition-all [box-shadow:0px_4px_1px_#81C784] active:translate-y-[2px] active:shadow-none'>
+      <p class="text-3xl mt-2 font-normal", id="session_click_count">0</p>
+      <button type='button' id='session-update-button' class='bg-[#8abea3] hover:bg-[#a3cca9] hover:[box-shadow:0px_4px_1px_#81C784] text-white font-medium py-2 px-4 overflow-hidden rounded-md mt-4 transition-all [box-shadow:0px_4px_1px_#81C784] active:translate-y-[2px] active:shadow-none'>
         りろーど
       </button>
     </div>
 
     <div class="my-12">
-      <button type='button' id='x-post-button' class="text-black bg-[#AEDFF7] hover:bg-[#AEDFF7]/80 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55">
+      <button type='button' id='x-post-button' class="text-black bg-[#AEDFF7] hover:bg-[#AEDFF7]/80   font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center ">
         <%= image_tag 'x-twitter-brands.svg',width: '20px' %><p>&emsp;しぇあ</p>
       </button>
     </div>
