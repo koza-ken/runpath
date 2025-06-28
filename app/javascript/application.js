@@ -57,6 +57,6 @@ sessionUpdateCountButton.addEventListener('click', updateSessionCountView)
 const tweetButton = document.getElementById("x-post-button");
 tweetButton.addEventListener("click", () => {
   let count = sessionStorage.getItem("session_count")
-  const tweetURL = `https://twitter.com/intent/tweet?text=${count}らんぱすー&hashtags=らんぱすー&url=https://www.yahoo.co.jp/`;  
+  const tweetURL = `https://twitter.com/intent/tweet?text=${count}らんぱすー&hashtags=らんぱすー&url=https://runpath.onrender.com`;  
   window.open(tweetURL, "_blank");
 });

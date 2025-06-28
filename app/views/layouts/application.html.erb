@@ -2,21 +2,28 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title><%= content_for(:title) || "Myapp" %></title>
+    <%# XのOGP %>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="らんぱすー">
+    <meta name="twitter:description" content="らんぱすーらんぱすー">
+    <meta name="twitter:image" content="https://runpath.onrender.com/public/ogp.png">
+    <%#  %>
+    <title><%= content_for(:title) || "らんぱすーぼたん" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= yield :head %>
+        <%# favicon設定 %>
     <link rel="manifest" href="/manifest.json" />
-    <link rel="icon" href="/icon.png" type="image/png" />
-    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/icon.png" />
+    <link rel="icon" href="/run_path.png" type="image/png" />
+    <link rel="icon" href="/run_path.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/runpath.png" />
     <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
-  <body>
+  <body class="bg-yellow-50">
     <%# <main class="container mx-auto mt-28 px-5 flex"> %>
     <%= yield %>
     <%# </main> %>
