@@ -41,14 +41,17 @@ const incrementSessionCount = () => {
   sessionStorage.setItem("session_count", count.toString())
 }
 
-const updateSessionCountView =  () => {
+const updateSessionCountView = () => {
   initSessionCount()
   let count = parseInt(sessionStorage.getItem("session_count"), 10)
   const element = document.getElementById("session_click_count")
-  if (element) {
-    element.textContent = `${count}`
+  if (isNaN(count)) {
+    count = parseInt(count)
   }
+  element.textContent = `${count}`
 }
+
+document.addEventListener('load', updateSessionCountView())
 
 const sessionUpdateCountButton = document.getElementById("session-update-button")
 sessionUpdateCountButton.addEventListener('click', updateSessionCountView)
