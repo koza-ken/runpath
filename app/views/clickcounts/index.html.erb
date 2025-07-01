@@ -1,20 +1,22 @@
+<%= turbo_stream_from "counts" %>
+
 <header>
 </header>
 
 <main class="max-w-2xs mx-auto text-center my-40 max-sm:mt-16 max-sm:mb-20">
   <div class="text-center">
-    <p class="text-3xl max-sm:text-2xl">みんなの&nbsp;らんぱすー</p>
+    <p class="text-3xl max-sm:text-2xl">らんぱすー</p>
     <p class="text-6xl mt-6 font-normal", id="all_click_count"><%= @count&.count %></p>
   </div>
 
-  <%= audio_tag "/ranpath.wav", id: "audio-play" %>
+  <%= audio_tag "/runpath.wav", id: "audio-play" %>
 
   <%= form_with url: clickcounts_path, method: :post, local: false, data: { turbo_method: :post } do |f| %>
     <%= f.submit 'らんぱすー', id: "audio-btn", 
         class: "mt-12 mb-6 group relative inline-flex h-12 items-center justify-center overflow-hidden 
                 rounded-md bg-[#f09134] hover:bg-[#F4A261] hover:[box-shadow:0px_4px_1px_#E76F51] 
-                p-10 max-sm:p-8 font-medium text-white text-3xl max-sm:text-2xl leading-0 transition-all [box-shadow:0px_4px_1px_#E76F51] 
-                active:translate-y-[2px] active:shadow-none" %>
+                p-10 max-sm:p-8 font-medium text-white text-3xl max-sm:text-2xl leading-0 transition-all 
+                [box-shadow:0px_4px_1px_#E76F51] active:translate-y-[2px] active:shadow-none" %>
   <% end %>
   
   <div id="volume-loud" class="mt-2" >
