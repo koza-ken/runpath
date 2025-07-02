@@ -63,3 +63,44 @@ tweetButton.addEventListener("click", () => {
   const tweetURL = `https://twitter.com/intent/tweet?text=${count}らんぱすー&hashtags=らんぱすー&url=https://runpath.onrender.com`;  
   window.open(tweetURL, "_blank");
 });
+
+
+// 隠しコマンドの処理
+const inputSequence = [];
+
+document.addEventListener('keydown', (event) => {
+  const key = event.key;
+  const normalizedKey = key.length === 1 ? key.toLowerCase() : key;
+
+  inputSequence.push(normalizedKey);
+
+  // window.secretCommand が未定義の場合は終了
+  if (!Array.isArray(window.secretCommand)) return;
+
+  if (inputSequence.length > window.secretCommand.length) {
+    // 古い入力削除
+    inputSequence.shift();
+  }
+
+  if (arraysMatch(inputSequence, window.secretCommand)) {
+    triggerSecretFeature();
+    // リセット
+    inputSequence.length = 0; 
+  }
+});
+
+function arraysMatch(arr1, arr2) {
+  return arr1.length === arr2.length && arr1.every((val, i) => val === arr2[i]);
+}
+
+const secretButton = document.getElementById("secret-button")
+function triggerSecretFeature() {
+  alert('かくしこまんどみーつけた！！')
+  secretButton.classList.remove('hidden');
+}
+
+const secretTweetButton = document.getElementById("secret-x-post-button");
+secretTweetButton.addEventListener("click", () => {
+  const secretTweetURL = `https://twitter.com/intent/tweet?text=かくしこまんどみーつけた！らんぱすー！！&hashtags=らんぱすー&url=https://runpath.onrender.com`;  
+  window.open(secretTweetURL, "_blank");
+});
